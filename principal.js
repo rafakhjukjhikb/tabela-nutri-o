@@ -60,6 +60,7 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 //executa os codigos ao clicar no botao
 botaoAdicionar.addEventListener('click',function(event){
 event.preventDefault();
+
 //acessa o formulario
 var formulario = document.querySelector("#form-adiciona");
 
@@ -84,6 +85,17 @@ pesoTd.textContent = peso;
 alturaTd.textContent = altura;
 gorduraTd.textContent = gordura;
 imcTd.textContent = imc;
+
+//adicionar as tags na tela do usuario
+pacienteTr.appendChild(nomeTd);
+pacienteTr.appendChild(pesoTd);
+pacienteTr.appendChild(alturaTd);
+pacienteTr.appendChild(gorduraTd);
+pacienteTr.appendChild(imcTd);
+
+//variavel para acessar Tdbody e criar a tabela
+var tabela = document.querySelector("#tabela-pacientes");
+tabela.appendChild(pacienteTr);
 
 
 });
